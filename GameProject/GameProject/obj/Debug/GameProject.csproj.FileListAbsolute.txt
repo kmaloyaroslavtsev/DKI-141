@@ -1,0 +1,6 @@
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\bin\Debug\GameProject.exe.config
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\bin\Debug\GameProject.exe
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\bin\Debug\GameProject.pdb
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.csprojResolveAssemblyReference.cache
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.exe
+c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.pdb
