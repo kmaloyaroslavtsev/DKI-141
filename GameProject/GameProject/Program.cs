@@ -10,7 +10,6 @@ namespace GameProject
     {
         static void Main(string[] args)
         {
-            var a = 5;
             Interface gameInterface = new Interface();
             gameInterface.KeyHandler();
         }

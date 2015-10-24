@@ -5,30 +5,30 @@ namespace GameProject
 {
     public class Interface
     {
-        private List<string> _upperPlayerCardsOnBoard;
+        private List<string> _lowerPlayerCardsInHand;
         private List<string> _lowerPlayerCardsOnBoard;
         private List<string> _upperPlayerCardsInHand;
-        private List<string> _lowerPlayerCardsInHand;
-
-        private int _currentPlayer;
-        private int _currentZone;
+        private List<string> _upperPlayerCardsOnBoard;
         private int _currentIndex;
+
+        private Player _currentPlayer;
+        private GameZone _currentZone;
 
         public Interface()
         {
-            _currentPlayer = 1;
-            _currentZone = 1;
+            _currentPlayer = Player.UpperPlayer;
+            _currentZone = GameZone.CardsOnTable;
             _currentIndex = 0;
 
-            _upperPlayerCardsOnBoard = new List<string>() { "card 1", "card 2", "card 3" };
-            _upperPlayerCardsInHand = new List<string>() { "card 1", "card 2", "card 3" };
-            _lowerPlayerCardsInHand = new List<string>() { "card 4", "card 5", "card 6" };
-            _lowerPlayerCardsOnBoard = new List<string>() { "card 1", "card 2", "card 3" };
+            _upperPlayerCardsOnBoard = new List<string> {"card 1", "card 2", "card 3"};
+            _upperPlayerCardsInHand = new List<string> {"card 1", "card 2", "card 3"};
+            _lowerPlayerCardsInHand = new List<string> {"card 4", "card 5", "card 6"};
+            _lowerPlayerCardsOnBoard = new List<string> {"card 1", "card 2", "card 3"};
 
             Print(_currentPlayer, _currentZone, _currentIndex);
         }
 
-        private void PrintActiveArea(List<string> cardsInHand, int indexOfSelectedPosition )
+        private void PrintActiveArea(List<string> cardsInHand, int indexOfSelectedPosition)
         {
             Console.WriteLine();
             Console.WriteLine("#######################################");
@@ -92,14 +92,14 @@ namespace GameProject
         {
             while (true)
             {
-                var pressedKey = Console.ReadKey();
+                ConsoleKeyInfo pressedKey = Console.ReadKey();
                 if (pressedKey.Key == ConsoleKey.UpArrow)
                 {
-                    if (_currentPlayer == 1 && _currentZone == 1)
+                    if (_currentPlayer == Player.UpperPlayer && _currentZone == GameZone.CardsOnTable)
                     {
                         if (_currentIndex == 0)
                         {
-                            _currentZone = 2;
+                            _currentZone = GameZone.CardsInHands;
                             _currentIndex = _upperPlayerCardsInHand.Count - 1;
                         }
                         else
@@ -107,11 +107,11 @@ namespace GameProject
                             _currentIndex--;
                         }
                     }
-                    else if (_currentPlayer == 1 && _currentZone == 2)
+                    else if (_currentPlayer == Player.UpperPlayer && _currentZone == GameZone.CardsInHands)
                     {
                         if (_currentIndex == 0)
                         {
-                            _currentZone = 1;
+                            _currentZone = GameZone.CardsOnTable;
                             _currentIndex = _upperPlayerCardsOnBoard.Count - 1;
                         }
                         else
@@ -119,11 +119,11 @@ namespace GameProject
                             _currentIndex--;
                         }
                     }
-                    else if (_currentPlayer == 2 && _currentZone == 1)
+                    else if (_currentPlayer == Player.LowerPlayer && _currentZone == GameZone.CardsOnTable)
                     {
                         if (_currentIndex == 0)
                         {
-                            _currentZone = 2;
+                            _currentZone = GameZone.CardsInHands;
                             _currentIndex = _lowerPlayerCardsInHand.Count - 1;
                         }
                         else
@@ -131,11 +131,11 @@ namespace GameProject
                             _currentIndex--;
                         }
                     }
-                    else if (_currentPlayer == 2 && _currentZone == 2)
+                    else if (_currentPlayer == Player.LowerPlayer && _currentZone == GameZone.CardsInHands)
                     {
                         if (_currentIndex == 0)
                         {
-                            _currentZone = 1;
+                            _currentZone = GameZone.CardsOnTable;
                             _currentIndex = _lowerPlayerCardsOnBoard.Count - 1;
                         }
                         else
@@ -143,15 +143,15 @@ namespace GameProject
                             _currentIndex--;
                         }
                     }
-                    Print(_currentPlayer,_currentZone,_currentIndex);
+                    Print(_currentPlayer, _currentZone, _currentIndex);
                 }
                 if (pressedKey.Key == ConsoleKey.DownArrow)
                 {
-                    if (_currentPlayer == 1 && _currentZone == 1)
+                    if (_currentPlayer == Player.UpperPlayer && _currentZone == GameZone.CardsOnTable)
                     {
                         if (_currentIndex == _upperPlayerCardsInHand.Count - 1)
                         {
-                            _currentZone = 2;
+                            _currentZone = GameZone.CardsInHands;
                             _currentIndex = 0;
                         }
                         else
@@ -159,11 +159,11 @@ namespace GameProject
                             _currentIndex++;
                         }
                     }
-                    else if (_currentPlayer == 1 && _currentZone == 2)
+                    else if (_currentPlayer == Player.UpperPlayer && _currentZone == GameZone.CardsInHands)
                     {
-                        if (_currentIndex == _upperPlayerCardsOnBoard.Count -1)
+                        if (_currentIndex == _upperPlayerCardsOnBoard.Count - 1)
                         {
-                            _currentZone = 1;
+                            _currentZone = GameZone.CardsOnTable;
                             _currentIndex = 0;
                         }
                         else
@@ -171,11 +171,11 @@ namespace GameProject
                             _currentIndex++;
                         }
                     }
-                    else if (_currentPlayer == 2 && _currentZone == 1)
+                    else if (_currentPlayer == Player.LowerPlayer && _currentZone == GameZone.CardsOnTable)
                     {
                         if (_currentIndex == _lowerPlayerCardsInHand.Count - 1)
                         {
-                            _currentZone = 2;
+                            _currentZone = GameZone.CardsInHands;
                             _currentIndex = 0;
                         }
                         else
@@ -183,11 +183,11 @@ namespace GameProject
                             _currentIndex++;
                         }
                     }
-                    else if (_currentPlayer == 2 && _currentZone == 2)
+                    else if (_currentPlayer == Player.LowerPlayer && _currentZone == GameZone.CardsInHands)
                     {
                         if (_currentIndex == _lowerPlayerCardsOnBoard.Count - 1)
                         {
-                            _currentZone = 1;
+                            _currentZone = GameZone.CardsOnTable;
                             _currentIndex = 0;
                         }
                         else
@@ -199,17 +199,16 @@ namespace GameProject
                 }
                 if (pressedKey.Key == ConsoleKey.Enter)
                 {
-                    if (_currentPlayer == 1)
+                    if (_currentPlayer == Player.UpperPlayer)
                     {
-                        _currentPlayer = 2;
-                        _currentZone = 1;
+                        _currentPlayer = Player.LowerPlayer;
+                        _currentZone = GameZone.CardsOnTable;
                         _currentIndex = 0;
-                        
                     }
-                    else if (_currentPlayer == 2)
+                    else if (_currentPlayer == Player.LowerPlayer)
                     {
-                        _currentPlayer = 1;
-                        _currentZone = 1;
+                        _currentPlayer = Player.UpperPlayer;
+                        _currentZone = GameZone.CardsOnTable;
                         _currentIndex = 0;
                     }
                     Print(_currentPlayer, _currentZone, _currentIndex);
@@ -217,15 +216,15 @@ namespace GameProject
             }
         }
 
-        public void Print(int playerNumber, int typeOfAction, int index)
+        public void Print(Player playerNumber, GameZone typeOfAction, int index)
         {
             Console.Clear();
-            if (playerNumber == 1)
+            if (playerNumber == Player.UpperPlayer)
             {
-                if (typeOfAction == 1)
+                if (typeOfAction == GameZone.CardsOnTable)
                 {
                     PrintUpperPlayer(index);
-                    PrintActiveArea(_upperPlayerCardsInHand,-1);
+                    PrintActiveArea(_upperPlayerCardsInHand, -1);
                 }
                 else
                 {
@@ -237,7 +236,7 @@ namespace GameProject
             else
             {
                 PrintUpperPlayer(-1);
-                if (typeOfAction == 1)
+                if (typeOfAction == GameZone.CardsOnTable)
                 {
                     PrintActiveArea(_lowerPlayerCardsInHand, -1);
                     PrintLowerPlayer(index);
