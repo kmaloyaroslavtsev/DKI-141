@@ -4,3 +4,9 @@ c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\bi
 c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.csprojResolveAssemblyReference.cache
 c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.exe
 c:\users\kirill\documents\visual studio 2013\Projects\GameProject\GameProject\obj\Debug\GameProject.pdb
+C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameProject.exe.config
+C:\Git\DKI-141\GameProject\GameProject\obj\Debug\GameProject.exe
+C:\Git\DKI-141\GameProject\GameProject\obj\Debug\GameProject.pdb
+C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameProject.exe
+C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameProject.pdb
+C:\Git\DKI-141\GameProject\GameProject\obj\Debug\GameProject.csprojResolveAssemblyReference.cache
