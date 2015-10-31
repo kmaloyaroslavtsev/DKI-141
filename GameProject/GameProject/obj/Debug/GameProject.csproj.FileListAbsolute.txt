@@ -10,3 +10,5 @@ C:\Git\DKI-141\GameProject\GameProject\obj\Debug\GameProject.pdb
 C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameProject.exe
 C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameProject.pdb
 C:\Git\DKI-141\GameProject\GameProject\obj\Debug\GameProject.csprojResolveAssemblyReference.cache
+C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameLogic.dll
+C:\Git\DKI-141\GameProject\GameProject\bin\Debug\GameLogic.pdb

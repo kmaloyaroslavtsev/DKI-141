@@ -20,10 +20,21 @@ namespace GameProject
             _currentZone = GameZone.CardsOnTable;
             _currentIndex = 0;
 
+            var Engine = new GameLogic.Engine();
+            Engine.StartGame();
+
             _upperPlayerCardsOnBoard = new List<string> {"card 1", "card 2", "card 3"};
-            _upperPlayerCardsInHand = new List<string> {"card 1", "card 2", "card 3"};
-            _lowerPlayerCardsInHand = new List<string> {"card 4", "card 5", "card 6"};
-            _lowerPlayerCardsOnBoard = new List<string> {"card 1", "card 2", "card 3"};
+            _upperPlayerCardsInHand = new List<string>();
+            foreach (var setOfCard in Engine.UpperPlayer.Cards)
+            {
+                _upperPlayerCardsInHand.Add(setOfCard.ToString());
+            }
+            _lowerPlayerCardsInHand = new List<string>();
+            foreach (var setOfCard in Engine.LowerPlayer.Cards)
+            {
+                _lowerPlayerCardsInHand.Add(setOfCard.ToString());
+            }
+            _lowerPlayerCardsOnBoard = new List<string> { "card 1", "card 2", "card 3" };
 
             Print(_currentPlayer, _currentZone, _currentIndex);
         }

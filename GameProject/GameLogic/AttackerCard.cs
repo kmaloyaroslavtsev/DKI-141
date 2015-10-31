@@ -6,5 +6,10 @@
         ///     Сила удара
         /// </summary>
         public int PowerOfAttack { get; set; }
+
+        public override string ToString()
+        {
+            return "Атакующая карта: " + Name;
+        }
     }
 }

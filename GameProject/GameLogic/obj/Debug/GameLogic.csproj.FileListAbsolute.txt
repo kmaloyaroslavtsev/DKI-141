@@ -1,0 +1,5 @@
+C:\Git\DKI-141\GameProject\GameLogic\bin\Debug\GameLogic.dll
+C:\Git\DKI-141\GameProject\GameLogic\bin\Debug\GameLogic.pdb
+C:\Git\DKI-141\GameProject\GameLogic\obj\Debug\GameLogic.csprojResolveAssemblyReference.cache
+C:\Git\DKI-141\GameProject\GameLogic\obj\Debug\GameLogic.dll
+C:\Git\DKI-141\GameProject\GameLogic\obj\Debug\GameLogic.pdb

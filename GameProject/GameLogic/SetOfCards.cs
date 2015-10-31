@@ -5,7 +5,7 @@ namespace GameLogic
 {
     public class SetOfCards
     {
-        private List<Card> Cards { get; set; }
+        public List<Card> Cards { get; set; }
 
         public Card GetNextCard()
         {
@@ -18,12 +18,7 @@ namespace GameLogic
 
         public SetOfCards()
         {
-            for (int i = 0; i < 30; i++)
-            {
-                Random rnd= new Random(DateTime.Now.Millisecond);
-                var randomValue = rnd.Next(0, DataBase.Cards.Count-1);
-                Cards.Add(DataBase.Cards[randomValue]);
-            }
+            Cards = new List<Card>();
         }
     }
 }
